@@ -1,0 +1,15 @@
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\controller\ClaimController.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\dto\CustomerDto.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\repository\PolicyRepository.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\dto\PolicyWithCustomerDto.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\client\CustomerClient.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\model\Policy.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\dto\ClaimUpdateRequest.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\model\Claim.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\PolicyServiceApplication.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\model\PolicyType.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\controller\PolicyController.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\model\ClaimStatus.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\service\PolicyService.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\service\ClaimService.java
+C:\Users\rayane\Desktop\Compagnie_assur\backend\policy-service\src\main\java\com\insurance\policyservice\repository\ClaimRepository.java

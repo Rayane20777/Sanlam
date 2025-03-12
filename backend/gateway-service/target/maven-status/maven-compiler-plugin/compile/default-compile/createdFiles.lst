@@ -1,0 +1,3 @@
+com\insurance\gatewayservice\GatewayServiceApplication.class
+com\insurance\gatewayservice\config\GatewayConfig.class
+com\insurance\gatewayservice\config\CorsConfig.class

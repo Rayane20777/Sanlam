@@ -1,0 +1,15 @@
+com\insurance\policyservice\model\PolicyType.class
+com\insurance\policyservice\model\Policy.class
+com\insurance\policyservice\controller\PolicyController.class
+com\insurance\policyservice\repository\ClaimRepository.class
+com\insurance\policyservice\repository\PolicyRepository.class
+com\insurance\policyservice\PolicyServiceApplication.class
+com\insurance\policyservice\client\CustomerClient.class
+com\insurance\policyservice\service\PolicyService.class
+com\insurance\policyservice\model\Claim.class
+com\insurance\policyservice\model\ClaimStatus.class
+com\insurance\policyservice\service\ClaimService.class
+com\insurance\policyservice\dto\ClaimUpdateRequest.class
+com\insurance\policyservice\dto\PolicyWithCustomerDto.class
+com\insurance\policyservice\dto\CustomerDto.class
+com\insurance\policyservice\controller\ClaimController.class

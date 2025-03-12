@@ -1,0 +1,5 @@
+com\insurance\customerservice\model\Customer.class
+com\insurance\customerservice\controller\CustomerController.class
+com\insurance\customerservice\service\CustomerService.class
+com\insurance\customerservice\repository\CustomerRepository.class
+com\insurance\customerservice\CustomerServiceApplication.class
