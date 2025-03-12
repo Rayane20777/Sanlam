@@ -4,15 +4,15 @@ import { createTheme } from "@mui/material/styles"
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#006341", // SANLAM green
-      light: "#3a8168",
-      dark: "#00462e",
+      main: "#0066B3", // SANLAM blue
+      light: "#4d8ac5",
+      dark: "#004580",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#0066b3", // SANLAM blue
-      light: "#4d8ac5",
-      dark: "#004580",
+      main: "#006341", // SANLAM green
+      light: "#3a8168",
+      dark: "#00462e",
       contrastText: "#ffffff",
     },
     error: {
@@ -97,15 +97,15 @@ const theme = createTheme({
           },
         },
         containedPrimary: {
-          backgroundImage: `linear-gradient(135deg, #006341 0%, #00462e 100%)`,
+          backgroundColor: "#0066B3",
           "&:hover": {
-            backgroundImage: `linear-gradient(135deg, #00462e 0%, #003a26 100%)`,
+            backgroundColor: "#004580",
           },
         },
         containedSecondary: {
-          backgroundImage: `linear-gradient(135deg, #0066b3 0%, #004580 100%)`,
+          backgroundColor: "#006341",
           "&:hover": {
-            backgroundImage: `linear-gradient(135deg, #004580 0%, #003a6b 100%)`,
+            backgroundColor: "#00462e",
           },
         },
       },

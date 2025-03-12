@@ -41,10 +41,11 @@ import {
 import { useAuth } from "../contexts/AuthContext"
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-    background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-    boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+    background: "#ffffff",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
     borderBottom: `1px solid ${theme.palette.divider}`,
     zIndex: theme.zIndex.drawer + 1,
+    color: theme.palette.text.primary,
 }))
 
 const drawerWidth = 260
@@ -62,10 +63,10 @@ const SidebarHeader = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-    color: "white",
+    backgroundColor: "#ffffff",
+    borderBottom: `1px solid ${theme.palette.divider}`,
     height: 64,
+    justifyContent: "space-between"
 }))
 
 const SidebarFooter = styled(Box)(({ theme }) => ({
@@ -80,13 +81,13 @@ const MenuItemStyled = styled(ListItem, {
     borderRadius: 8,
     margin: "4px 8px",
     "&.Mui-selected": {
-        backgroundColor: theme.palette.primary.main + "15",
-        color: theme.palette.primary.main,
+        backgroundColor: "#0066B315",
+        color: "#0066B3",
         "& .MuiListItemIcon-root": {
-            color: theme.palette.primary.main,
+            color: "#0066B3",
         },
         "&:hover": {
-            backgroundColor: theme.palette.primary.main + "25",
+            backgroundColor: "#0066B325",
         },
     },
     "&:hover": {
@@ -117,11 +118,18 @@ const Layout: React.FC = () => {
     const drawerContent = (
         <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <SidebarHeader>
-                <Typography variant="h6" fontWeight="bold" sx={{ flexGrow: 1 }}>
-                    SANLAM
-                </Typography>
+                <Box component="img" src="/assets/sanlam-investments-logo.png" alt="Sanlam Investments" sx={{ height: 40 }} />
                 {isMobile && (
-                    <IconButton edge="end" color="inherit" onClick={handleDrawerToggle}>
+                    <IconButton 
+                        edge="end" 
+                        onClick={handleDrawerToggle}
+                        sx={{ 
+                            color: "#0066B3",
+                            '&:hover': {
+                                backgroundColor: 'rgba(0, 102, 179, 0.04)'
+                            }
+                        }}
+                    >
                         <ChevronLeft />
                     </IconButton>
                 )}
@@ -134,26 +142,24 @@ const Layout: React.FC = () => {
 
                 <List sx={{ p: 0 }}>
                     {menuItems.map((item) => (
-                        <MenuItemStyled
-                            button={true as any}
-                            key={item.text}
-                            component={Link}
-                            to={item.path}
-                            selected={location.pathname === item.path || location.pathname.startsWith(item.path + "/")}
-                            onClick={() => isMobile && setMobileOpen(false)}
-                        >
-                            <ListItemIcon
-                                sx={{ minWidth: 40, color: location.pathname === item.path ? theme.palette.primary.main : "inherit" }}
+                        <Link key={item.text} to={item.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+                            <MenuItemStyled
+                                selected={location.pathname === item.path || location.pathname.startsWith(item.path + "/")}
+                                onClick={() => isMobile && setMobileOpen(false)}
                             >
-                                {item.icon}
-                            </ListItemIcon>
-                            <ListItemText
-                                primary={item.text}
-                                primaryTypographyProps={{
-                                    fontWeight: location.pathname === item.path ? 600 : 400,
-                                }}
-                            />
-                        </MenuItemStyled>
+                                <ListItemIcon
+                                    sx={{ minWidth: 40, color: location.pathname === item.path ? theme.palette.primary.main : "inherit" }}
+                                >
+                                    {item.icon}
+                                </ListItemIcon>
+                                <ListItemText
+                                    primary={item.text}
+                                    primaryTypographyProps={{
+                                        fontWeight: location.pathname === item.path ? 600 : 400,
+                                    }}
+                                />
+                            </MenuItemStyled>
+                        </Link>
                     ))}
                 </List>
             </Box>
@@ -180,7 +186,15 @@ const Layout: React.FC = () => {
         <Box sx={{ display: "flex" }}>
             <StyledAppBar position="fixed">
                 <Toolbar>
-                    <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { md: "none" } }}>
+                    <IconButton 
+                        sx={{ 
+                            mr: 2, 
+                            display: { md: "none" },
+                            color: "#0066B3" 
+                        }}
+                        edge="start" 
+                        onClick={handleDrawerToggle}
+                    >
                         <MenuIcon />
                     </IconButton>
 
@@ -190,13 +204,12 @@ const Layout: React.FC = () => {
                         to="/"
                         sx={{
                             display: { xs: "none", md: "flex" },
-                            fontWeight: 700,
                             color: "inherit",
                             textDecoration: "none",
                             "&:hover": { opacity: 0.9 },
                         }}
                     >
-                        SANLAM INSURANCE
+                        <Box component="img" src="/assets/sanlam-investments-logo.png" alt="Sanlam Investments" sx={{ height: 40 }} />
                     </Typography>
 
                     <Typography
@@ -206,13 +219,12 @@ const Layout: React.FC = () => {
                         sx={{
                             display: { xs: "flex", md: "none" },
                             flexGrow: 1,
-                            fontWeight: 700,
                             color: "inherit",
                             textDecoration: "none",
                             "&:hover": { opacity: 0.9 },
                         }}
                     >
-                        SANLAM
+                        <Box component="img" src="/assets/sanlam-investments-logo.png" alt="Sanlam Investments" sx={{ height: 32 }} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1 }} />
@@ -220,7 +232,7 @@ const Layout: React.FC = () => {
                     {isAuthenticated ? (
                         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                             <Tooltip title="Notifications">
-                                <IconButton color="inherit">
+                                <IconButton sx={{ color: "#0066B3" }}>
                                     <Badge badgeContent={3} color="error">
                                         <Notifications />
                                     </Badge>
@@ -228,8 +240,25 @@ const Layout: React.FC = () => {
                             </Tooltip>
 
                             <Tooltip title="Account settings">
-                                <IconButton onClick={(e) => setAnchorElUser(e.currentTarget)} color="inherit">
-                                    <Avatar alt={user?.username} src="/static/images/avatar/2.jpg" sx={{ width: 32, height: 32 }} />
+                                <IconButton 
+                                    onClick={(e) => setAnchorElUser(e.currentTarget)} 
+                                    sx={{ 
+                                        border: '2px solid #0066B3',
+                                        padding: '4px',
+                                        '&:hover': {
+                                            backgroundColor: 'rgba(0, 102, 179, 0.04)'
+                                        }
+                                    }}
+                                >
+                                    <Avatar 
+                                        alt={user?.username} 
+                                        src="/static/images/avatar/2.jpg" 
+                                        sx={{ 
+                                            width: 32, 
+                                            height: 32,
+                                            border: '2px solid #fff'
+                                        }} 
+                                    />
                                 </IconButton>
                             </Tooltip>
 

@@ -66,7 +66,7 @@ const Login: React.FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+        background: "#E5E7EB",
         p: 3,
       }}
     >
@@ -79,6 +79,7 @@ const Login: React.FC = () => {
           width: "100%",
           borderRadius: 2,
           overflow: "hidden",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
         }}
       >
         {/* Left side - Brand */}
@@ -90,26 +91,25 @@ const Login: React.FC = () => {
             justifyContent: "center",
             alignItems: "center",
             p: 4,
-            backgroundColor: theme.palette.primary.main,
-            color: "white",
+            backgroundColor: "#F3F4F6",
+            color: "#0066B3",
             textAlign: "center",
+            borderRight: "1px solid",
+            borderColor: "divider",
           }}
         >
-          <Typography variant="h4" fontWeight={700} gutterBottom>
-            SANLAM
-          </Typography>
-          <Typography variant="h6" fontWeight={500} gutterBottom>
-            Insurance Management
-          </Typography>
-          <Box sx={{ my: 3 }}>
+          <Box sx={{ mb: 3, width: "80%", maxWidth: 280 }}>
             <img
-              src="/placeholder.svg?height=120&width=120"
-              alt="SANLAM Logo"
-              style={{ maxWidth: "100%", height: "auto" }}
+              src="/assets/sanlam-investments-logo.png"
+              alt="Sanlam Investments"
+              style={{ width: "100%", height: "auto" }}
             />
           </Box>
-          <Typography variant="body2" sx={{ mt: 2, opacity: 0.8 }}>
-            Secure your future with SANLAM's comprehensive insurance solutions.
+          <Typography variant="h6" fontWeight={500} sx={{ mt: 2, color: "#666666" }}>
+            Insurance Management System
+          </Typography>
+          <Typography variant="body2" sx={{ mt: 2, color: "#666666" }}>
+            Secure your future with Sanlam's comprehensive insurance solutions.
           </Typography>
         </Box>
 
@@ -121,6 +121,7 @@ const Login: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            backgroundColor: "#ffffff",
           }}
         >
           <Box sx={{ textAlign: "center", mb: 3 }}>
@@ -153,7 +154,7 @@ const Login: React.FC = () => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <EmailIcon color="primary" />
+                    <EmailIcon sx={{ color: "#0066B3" }} />
                   </InputAdornment>
                 ),
               }}
@@ -173,12 +174,17 @@ const Login: React.FC = () => {
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <LockIcon color="primary" />
+                    <LockIcon sx={{ color: "#0066B3" }} />
                   </InputAdornment>
                 ),
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton aria-label="toggle password visibility" onClick={toggleShowPassword} edge="end">
+                    <IconButton 
+                      aria-label="toggle password visibility" 
+                      onClick={toggleShowPassword} 
+                      edge="end"
+                      sx={{ color: "#0066B3" }}
+                    >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
@@ -190,10 +196,16 @@ const Login: React.FC = () => {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               size="large"
               disabled={loading}
-              sx={{ py: 1.5, mb: 2 }}
+              sx={{ 
+                py: 1.5, 
+                mb: 2,
+                bgcolor: "#0066B3",
+                "&:hover": {
+                  bgcolor: "#004580"
+                }
+              }}
             >
               {loading ? <CircularProgress size={24} color="inherit" /> : "Sign In"}
             </Button>
@@ -203,7 +215,7 @@ const Login: React.FC = () => {
                 Don't have an account?{" "}
                 <Link
                   to="/register"
-                  style={{ color: theme.palette.primary.main, fontWeight: 500, textDecoration: "none" }}
+                  style={{ color: "#0066B3", fontWeight: 500, textDecoration: "none" }}
                 >
                   Sign Up
                 </Link>
